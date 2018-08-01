@@ -10,7 +10,7 @@ class JournalEntriesController < ProtectedController
 
   # GET /journal_entries/1
   def show
-    render json: Journal_entry.find(params[:id])
+    render json: current_user.journal_entries.find(params[:id])
   end
 
   # POST /journal_entries
