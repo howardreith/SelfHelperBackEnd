@@ -46,6 +46,6 @@ class JournalEntriesController < ProtectedController
 
     # Only allow a trusted parameter "white list" through.
     def journal_entry_params
-      params.require(:journal_entry).permit(:title, :content, :starred, :dateCreated)
+      params.require(:journal_entry).permit(:title, :content, :starred, :created_at, :updated_at)
     end
 end
