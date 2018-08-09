@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180801183005) do
+ActiveRecord::Schema.define(version: 20180809145457) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "colum_methods", force: :cascade do |t|
+    t.string "event"
+    t.string "emotion"
+    t.string "autothought"
+    t.string "distortion"
+    t.string "response"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_colum_methods_on_user_id"
+  end
 
   create_table "creatures", force: :cascade do |t|
     t.string "name"
@@ -102,6 +114,7 @@ ActiveRecord::Schema.define(version: 20180801183005) do
     t.index ["token"], name: "index_users_on_token", unique: true
   end
 
+  add_foreign_key "colum_methods", "users"
   add_foreign_key "creatures", "users"
   add_foreign_key "examples", "users"
 end
