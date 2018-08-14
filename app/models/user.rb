@@ -5,4 +5,5 @@ class User < ApplicationRecord
   has_many :examples
   has_many :journal_entries
   has_many :colum_methods
+  has_many :downward_arrows
 end

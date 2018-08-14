@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180809145457) do
+ActiveRecord::Schema.define(version: 20180814163201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "arrows", force: :cascade do |t|
+    t.string "autothought"
+    t.string "distortion"
+    t.string "response"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_arrows_on_user_id"
+  end
 
   create_table "colum_methods", force: :cascade do |t|
     t.string "event"
@@ -86,6 +96,16 @@ ActiveRecord::Schema.define(version: 20180809145457) do
     t.index ["user_id"], name: "index_creatures_on_user_id"
   end
 
+  create_table "downward_arrows", force: :cascade do |t|
+    t.string "autothought"
+    t.string "distortion"
+    t.string "response"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_downward_arrows_on_user_id"
+  end
+
   create_table "examples", force: :cascade do |t|
     t.text "text", null: false
     t.bigint "user_id", null: false
@@ -114,7 +134,9 @@ ActiveRecord::Schema.define(version: 20180809145457) do
     t.index ["token"], name: "index_users_on_token", unique: true
   end
 
+  add_foreign_key "arrows", "users"
   add_foreign_key "colum_methods", "users"
   add_foreign_key "creatures", "users"
+  add_foreign_key "downward_arrows", "users"
   add_foreign_key "examples", "users"
 end
