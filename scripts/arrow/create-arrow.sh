@@ -7,9 +7,9 @@ curl "http://localhost:4741/downward_arrows" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
     "downward_arrow": {
-      "autothought": "'"${autothought}"'",
-      "distortion": "'"${distortion}"'",
-      "response": "'"${response}"'"
+      "autothought1": "'"${autothought1}"'",
+      "distortion1": "'"${distortion1}"'",
+      "response1": "'"${response1}"'"
     }
   }'
 
