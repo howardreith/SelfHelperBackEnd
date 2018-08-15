@@ -46,6 +46,6 @@ class DownwardArrowsController < ProtectedController
 
     # Only allow a trusted parameter "white list" through.
     def downward_arrow_params
-      params.require(:downward_arrow).permit(:autothought, :distortion, :response, :created_at, :updated_at)
+      params.require(:downward_arrow).permit(:autothought1, :distortion1, :response1, :created_at, :updated_at)
     end
 end

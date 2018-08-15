@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180814163201) do
+ActiveRecord::Schema.define(version: 20180815173137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,72 +37,13 @@ ActiveRecord::Schema.define(version: 20180814163201) do
     t.index ["user_id"], name: "index_colum_methods_on_user_id"
   end
 
-  create_table "creatures", force: :cascade do |t|
-    t.string "name"
-    t.float "cr"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "alignment"
-    t.string "size"
-    t.integer "initiative"
-    t.string "senses"
-    t.string "perception"
-    t.string "languages"
-    t.string "skills"
-    t.string "items"
-    t.string "appearance"
-    t.string "description"
-    t.string "environment"
-    t.string "organization"
-    t.string "treasure"
-    t.string "source"
-    t.string "ac"
-    t.string "ac_notes"
-    t.string "cmd"
-    t.string "saves"
-    t.integer "hp"
-    t.string "hd"
-    t.string "dr"
-    t.string "fast_healing_regen"
-    t.string "immunities"
-    t.string "resistances"
-    t.integer "sr"
-    t.string "weaknesses"
-    t.string "defensive_abilities"
-    t.string "speed"
-    t.string "speed_note"
-    t.string "melee"
-    t.string "cmb"
-    t.string "ranged"
-    t.string "offense_note"
-    t.string "special_abilities"
-    t.string "spell_like_abilities"
-    t.string "spells_known"
-    t.string "spells_prepared"
-    t.string "feats"
-    t.string "additional_special_qualities"
-    t.string "str"
-    t.string "dex"
-    t.string "con"
-    t.string "int"
-    t.string "wis"
-    t.string "cha"
-    t.string "reach"
-    t.integer "flat_footed"
-    t.string "creature_category"
-    t.integer "dodgeac"
-    t.string "subcategory"
-    t.index ["user_id"], name: "index_creatures_on_user_id"
-  end
-
   create_table "downward_arrows", force: :cascade do |t|
-    t.string "autothought"
-    t.string "distortion"
-    t.string "response"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "autothought1"
+    t.string "distortion1"
+    t.string "response1"
     t.index ["user_id"], name: "index_downward_arrows_on_user_id"
   end
 
@@ -136,7 +77,6 @@ ActiveRecord::Schema.define(version: 20180814163201) do
 
   add_foreign_key "arrows", "users"
   add_foreign_key "colum_methods", "users"
-  add_foreign_key "creatures", "users"
   add_foreign_key "downward_arrows", "users"
   add_foreign_key "examples", "users"
 end
