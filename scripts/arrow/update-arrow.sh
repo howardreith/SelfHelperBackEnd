@@ -9,7 +9,10 @@ curl "http://localhost:4741/downward_arrows/${id}" \
     "downward_arrow": {
       "autothought1": "'"${autothought1}"'",
       "distortion1": "'"${distortion1}"'",
-      "response1": "'"${response1}"'"
+      "response1": "'"${response1}"'",
+      "autothought2": "'"${autothought2}"'",
+      "distortion2": "'"${distortion2}"'",
+      "response2": "'"${response2}"'"
     }
   }'
 

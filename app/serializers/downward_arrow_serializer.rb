@@ -1,6 +1,6 @@
 class DownwardArrowSerializer < ActiveModel::Serializer
-  attributes :id, :autothought1, :distortion1, :response1, :created_at,
-  :updated_at, :autothought2, :distortion2, :response2, :autothought3,
+  attributes :id, :autothought2, :autothought1, :distortion1, :response1, :created_at,
+  :updated_at, :distortion2, :response2, :autothought3,
   :distortion3, :response3, :autothought4, :distortion4, :response4,
   :autothought5, :distortion5, :response5, :autothought6, :distortion6,
   :response6, :autothought7, :distortion7, :response7, :autothought8,

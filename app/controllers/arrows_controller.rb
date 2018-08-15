@@ -46,7 +46,7 @@ class ArrowsController < ProtectedController
 
     # Only allow a trusted parameter "white list" through.
     def arrow_params
-      params.require(:arrow).permit(:autothought, :distortion, :response,
+      params.require(:arrow).permit(:autothought1, :distortion1, :response1,
       :created_at, :updated_at, :autothought2, :distortion2, :response2, :autothought3,
       :distortion3, :response3, :autothought4, :distortion4, :response4,
       :autothought5, :distortion5, :response5, :autothought6, :distortion6,
