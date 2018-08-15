@@ -11,6 +11,6 @@ class DownwardArrowSerializer < ActiveModel::Serializer
   :autothought15, :distortion15, :response15, :autothought16, :distortion16,
   :response16, :autothought17, :distortion17, :response17, :autothought18,
   :distortion18, :response18, :autothought19, :distortion19, :response19,
-  :autothought20, :distortion20, :response20,
+  :autothought20, :distortion20, :response20
   has_one :user
 end
