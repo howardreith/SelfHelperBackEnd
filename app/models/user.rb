@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :colum_methods
   has_many :downward_arrows
   has_many :exposures
+  has_many :generics
 end

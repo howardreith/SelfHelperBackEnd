@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180816184243) do
+ActiveRecord::Schema.define(version: 20180816203358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -123,6 +123,15 @@ ActiveRecord::Schema.define(version: 20180816184243) do
     t.index ["user_id"], name: "index_exposures_on_user_id"
   end
 
+  create_table "generics", force: :cascade do |t|
+    t.string "activity"
+    t.float "fear_level"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_generics_on_user_id"
+  end
+
   create_table "journal_entries", force: :cascade do |t|
     t.string "title"
     t.string "content"
@@ -148,4 +157,5 @@ ActiveRecord::Schema.define(version: 20180816184243) do
   add_foreign_key "downward_arrows", "users"
   add_foreign_key "examples", "users"
   add_foreign_key "exposures", "users"
+  add_foreign_key "generics", "users"
 end
