@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :journal_entries
   has_many :colum_methods
   has_many :downward_arrows
+  has_many :exposures
 end

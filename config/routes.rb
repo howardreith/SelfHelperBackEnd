@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :exposures
   resources :downward_arrows
   resources :colum_methods
   resources :journal_entries
