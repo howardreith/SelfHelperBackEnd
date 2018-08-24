@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180816203358) do
+ActiveRecord::Schema.define(version: 20180824181852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,65 @@ ActiveRecord::Schema.define(version: 20180816203358) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_colum_methods_on_user_id"
+  end
+
+  create_table "creatures", force: :cascade do |t|
+    t.string "name"
+    t.float "cr"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "alignment"
+    t.string "size"
+    t.integer "initiative"
+    t.string "senses"
+    t.string "perception"
+    t.string "languages"
+    t.string "skills"
+    t.string "items"
+    t.string "appearance"
+    t.string "description"
+    t.string "environment"
+    t.string "organization"
+    t.string "treasure"
+    t.string "source"
+    t.string "ac"
+    t.string "ac_notes"
+    t.string "cmd"
+    t.string "saves"
+    t.integer "hp"
+    t.string "hd"
+    t.string "dr"
+    t.string "fast_healing_regen"
+    t.string "immunities"
+    t.string "resistances"
+    t.integer "sr"
+    t.string "weaknesses"
+    t.string "defensive_abilities"
+    t.string "speed"
+    t.string "speed_note"
+    t.string "melee"
+    t.string "cmb"
+    t.string "ranged"
+    t.string "offense_note"
+    t.string "special_abilities"
+    t.string "spell_like_abilities"
+    t.string "spells_known"
+    t.string "spells_prepared"
+    t.string "feats"
+    t.string "additional_special_qualities"
+    t.string "str"
+    t.string "dex"
+    t.string "con"
+    t.string "int"
+    t.string "wis"
+    t.string "cha"
+    t.string "reach"
+    t.integer "flat_footed"
+    t.string "creature_category"
+    t.integer "dodgeac"
+    t.string "subcategory"
+    t.index ["user_id"], name: "index_creatures_on_user_id"
   end
 
   create_table "downward_arrows", force: :cascade do |t|
@@ -123,6 +182,13 @@ ActiveRecord::Schema.define(version: 20180816203358) do
     t.index ["user_id"], name: "index_exposures_on_user_id"
   end
 
+  create_table "foods", force: :cascade do |t|
+    t.string "food"
+    t.string "drink"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "generics", force: :cascade do |t|
     t.string "activity"
     t.float "fear_level"
@@ -142,6 +208,94 @@ ActiveRecord::Schema.define(version: 20180816203358) do
     t.integer "user_id"
   end
 
+  create_table "public_creatures", force: :cascade do |t|
+    t.string "name"
+    t.float "cr"
+    t.string "alignment"
+    t.string "creature_category"
+    t.string "subcategory"
+    t.string "size"
+    t.integer "initiative"
+    t.string "senses"
+    t.string "perception"
+    t.string "languages"
+    t.string "skills"
+    t.string "str"
+    t.string "dex"
+    t.string "con"
+    t.string "int"
+    t.string "wis"
+    t.string "cha"
+    t.string "items"
+    t.string "appearance"
+    t.string "description"
+    t.string "environment"
+    t.string "organization"
+    t.string "treasure"
+    t.string "source"
+    t.string "ac"
+    t.integer "dodgeac"
+    t.integer "flat_footed"
+    t.string "ac_notes"
+    t.string "cmd"
+    t.string "saves"
+    t.integer "hp"
+    t.string "hd"
+    t.string "dr"
+    t.string "fast_healing_regen"
+    t.string "immunities"
+    t.string "resistances"
+    t.integer "sr"
+    t.string "weaknesses"
+    t.string "defensive_abilities"
+    t.string "speed"
+    t.string "speed_note"
+    t.string "melee"
+    t.string "cmb"
+    t.string "reach"
+    t.string "ranged"
+    t.string "offense_note"
+    t.string "special_abilities"
+    t.string "spell_like_abilities"
+    t.string "spells_known"
+    t.string "spells_prepared"
+    t.string "feats"
+    t.string "additional_special_qualities"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "public_routines", force: :cascade do |t|
+    t.string "name"
+    t.boolean "include"
+    t.string "exercise1"
+    t.string "reps1"
+    t.string "exercise2"
+    t.string "reps2"
+    t.string "exercise3"
+    t.string "reps3"
+    t.string "exercise4"
+    t.string "reps4"
+    t.string "exercise5"
+    t.string "reps5"
+    t.string "exercise6"
+    t.string "reps6"
+    t.string "exercise7"
+    t.string "reps7"
+    t.string "exercise8"
+    t.string "reps8"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "sets1"
+    t.integer "sets2"
+    t.integer "sets3"
+    t.integer "sets4"
+    t.integer "sets5"
+    t.integer "sets6"
+    t.integer "sets7"
+    t.integer "sets8"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "token", null: false
@@ -154,6 +308,7 @@ ActiveRecord::Schema.define(version: 20180816203358) do
 
   add_foreign_key "arrows", "users"
   add_foreign_key "colum_methods", "users"
+  add_foreign_key "creatures", "users"
   add_foreign_key "downward_arrows", "users"
   add_foreign_key "examples", "users"
   add_foreign_key "exposures", "users"
