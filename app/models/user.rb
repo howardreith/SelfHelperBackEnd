@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :downward_arrows
   has_many :exposures
   has_many :generics
+  has_many :routines
+  has_many :workouts
 end

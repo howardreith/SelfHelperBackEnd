@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :workouts
+  resources :routines
   resources :public_routines
   resources :generics
   resources :exposures
