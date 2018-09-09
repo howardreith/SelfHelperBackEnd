@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180831184625) do
+ActiveRecord::Schema.define(version: 20180909184344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -421,13 +421,6 @@ ActiveRecord::Schema.define(version: 20180831184625) do
     t.integer "exercise8reps8"
     t.string "exercise9"
     t.integer "exercise9reps1"
-    t.integer "exercise9reps2"
-    t.integer "exercise9reps3"
-    t.integer "exercise9reps4"
-    t.integer "exercise9reps5"
-    t.integer "exercise9reps6"
-    t.integer "exercise9reps7"
-    t.integer "exercise9reps8"
     t.string "exercise10"
     t.integer "exercise10reps1"
     t.integer "exercise10reps2"
@@ -440,7 +433,23 @@ ActiveRecord::Schema.define(version: 20180831184625) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-
+    t.integer "exercise9reps2"
+    t.integer "exercise9reps3"
+    t.integer "exercise9reps4"
+    t.integer "exercise9reps5"
+    t.integer "exercise9reps6"
+    t.integer "exercise9reps7"
+    t.integer "exercise9reps8"
+    t.float "exercise1weight"
+    t.float "exercise2weight"
+    t.float "exercise3weight"
+    t.float "exercise4weight"
+    t.float "exercise5weight"
+    t.float "exercise6weight"
+    t.float "exercise7weight"
+    t.float "exercise8weight"
+    t.float "exercise9weight"
+    t.float "exercise10weight"
     t.index ["user_id"], name: "index_workouts_on_user_id"
   end
 

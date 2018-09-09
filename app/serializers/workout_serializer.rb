@@ -19,6 +19,8 @@ class WorkoutSerializer < ActiveModel::Serializer
   :exercise9, :exercise9reps1, :exercise9reps2, :exercise9reps3,
   :exercise9reps4, :exercise9reps5, :exercise9reps6, :exercise9reps7, :exercise9reps8,
   :exercise10, :exercise10reps1, :exercise10reps2, :exercise10reps3,
-  :exercise10reps4, :exercise10reps5, :exercise10reps6, :exercise10reps7, :exercise10reps8
+  :exercise10reps4, :exercise10reps5, :exercise10reps6, :exercise10reps7, :exercise10reps8,
+  :exercise1weight, :exercise2weight, :exercise3weight, :exercise4weight, :exercise5weight,
+  :exercise6weight, :exercise7weight, :exercise8weight, :exercise9weight, :exercise10weight
   has_one :user
 end
