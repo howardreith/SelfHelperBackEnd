@@ -10,7 +10,7 @@ The Self-Helper is a web application built to accompany one's efforts when worki
 * Back-End Repository: https://github.com/howardreith/SelfHelperBackEnd
 * Back-End Live Site: https://morning-brook-19819.herokuapp.com/
 
-### Technologies used in The Hot Guyde Companion include:
+### Technologies used in The Self-Helper include:
 HTML5, SCSS, Javascript, Ember.js, Handlebars, Bootstrap, and Heroku
 
 ## Planning and Execution
